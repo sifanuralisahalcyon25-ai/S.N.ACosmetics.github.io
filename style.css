@@ -1,0 +1,145 @@
+
+/* ===== BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Open Sans',sans-serif;
+  background:#fdf9f5;
+  color:#333;
+  padding-top:90px; /* ✅ Biar konten ga ketutup navbar */
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  background:#fff;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  font-weight:600;
+  color:#a10032;
+}
+
+/* Menu Desktop */
+.nav-menu{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+.nav-menu li a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+.nav-menu li a:hover{color:#a10032;}
+
+/* Cart Icon */
+.nav-icons{display:flex;align-items:center;gap:10px;}
+.cart-link{
+  font-size:22px;
+  color:#333;
+  text-decoration:none;
+  position:relative;
+}
+.cart-count{
+  position:absolute;
+  top:-8px;right:-10px;
+  font-size:12px;
+  background:#a10032;
+  color:#fff;
+  border-radius:50%;
+  padding:2px 6px;
+  font-weight:bold;
+  display:none;
+}
+
+/* Hamburger */
+.hamburger-menu{
+  display:none;
+  background:none;
+  border:none;
+  font-size:26px;
+  color:#a10032;
+  cursor:pointer;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  body { padding-top: 75px; }
+
+  /* navbar layout on mobile */
+  .navbar {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger-menu {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a10032;
+    z-index: 1001;
+  }
+
+  /* Cart icon right beside hamburger */
+  .nav-icons {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* == MENU DROPDOWN ATTACHED TO HAMBURGER == */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 55px; /* exactly below hamburger */
+    right: 20px; /* align with hamburger */
+    background: #fff;
+    width: 160px;
+    border-radius: 8px;
+    padding: 12px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    animation: fadeMenu .25s ease;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    text-align: right;
+    padding: 10px 18px;
+  }
+
+  .nav-menu li a {
+    font-size: 15px;
+    display: block;
+  }
+
+  .nav-menu li a:hover {
+    color: #a10032;
+  }
+
+  @keyframes fadeMenu {
+    from {opacity: 0; transform: translateY(-5px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+}
+
+/* ===== HERO / OTHER SECTIONS default style tetap dari HTML inline kamu ===== */
