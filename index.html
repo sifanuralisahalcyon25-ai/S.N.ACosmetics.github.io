@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S.N.A Cosmetics</title>
+  <meta name="description" content="Temukan kecantikan alami Anda dengan kosmetik premium dari S.N.A Cosmetics.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- 🌸 FAVICON -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo-sna.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo-sna.png">
+  <link rel="apple-touch-icon" href="images/logo-sna.png">
+  <!-- pastikan file logo-sna.png disimpan di folder "images" -->
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fdf9f5;
+      color: #333;
+    }
+
+    /* === NAVBAR === */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #a10032;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-menu a:hover {
+      color: #a10032;
+    }
+
+    .nav-icons a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      position: relative;
+      margin-top: 80px;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+      color: white;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text .btn {
+      background-color: #f4efe9;
+      color: #a10032;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero-text .btn:hover {
+      background-color: #a10032;
+      color: #fff;
+    }
+
+    /* === ABOUT SECTION === */
+    .about-header {
+      position: relative;
+      margin-top: 80px;
+    }
+
+    .about-header img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      filter: brightness(60%);
+    }
+
+    .about-header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #a10032;
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      text-align: center;
+    }
+
+    .about-section {
+      background-color: #fdf7f1;
+      padding: 80px 120px;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .about-content img {
+      width: 400px;
+      border-radius: 8px;
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      color: #a10032;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .about-text ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    .about-text ul li {
+      margin-bottom: 8px;
+    }
+
+    .about-text .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #a10032;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .about-text .btn:hover {
+      background-color: #740024;
+    }
+
+    /* === BRAND SECTION === */
+    .brands {
+      background-color: #fdf7f1;
+      padding: 60px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .brands img {
+      height: 60px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    .brands img:hover {
+      filter: grayscale(0);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* === FOOTER === */
+    footer {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #eee;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">S.N.A Cosmetics</div>
+
+  <button class="hamburger-menu">&#9776;</button>
+
+  <ul class="nav-menu">
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT US</a></li>
+    <li><a href="#products">OUR PRODUCTS</a></li>
+    <li><a href="#contact">CONTACT US</a></li>
+  </ul>
+
+  <div class="nav-icons">
+    <a href="checkout.html" class="cart-link">
+      🛒<span class="cart-count">00</span>
+    </a>
+  </div>
+</nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <img src="https://www.beautyhaul.com/assets/uploads/macam_macam_kosmetik.jpg" alt="Banner Kosmetik">
+    <div class="hero-text">
+      <h1>REVEAL YOUR<br>BEAUTY</h1>
+      <p>Discover Your Perfect Look With Premium Cosmetics</p>
+      <a href="#products" class="btn">SHOP COLLECTION</a>
+    </div>
+  </section>
+
+  <!-- ABOUT US SECTION -->
+  <section id="about">
+    <div class="about-header">
+      <h1>ABOUT US</h1>
+    </div>
+
+    <div class="about-section">
+      <div class="about-content">
+        <img src="https://img.freepik.com/foto-premium/wanita-kecantikan-kosmetik-orang-perawatan-muda-kulit-asia-wajah-perempuan-cantik-model-potret_1064589-124826.jpg" alt="About Image">
+        <div class="about-text">
+          <h2>How S.N.A Started</h2>
+          <p>S.N.A Cosmetics berdiri dengan semangat untuk menghadirkan kecantikan alami bagi semua wanita. Kami percaya bahwa setiap wanita memiliki pesonanya sendiri, dan kosmetik kami hadir untuk menonjolkan keindahan tersebut dengan bahan-bahan premium yang aman.</p>
+          <ul>
+            <li>Produk kami terbuat dari bahan alami pilihan.</li>
+            <li>Tersertifikasi BPOM dan dermatologically tested.</li>
+            <li>Mendukung keberlanjutan dan tanpa uji coba pada hewan.</li>
+          </ul>
+          <a href="#" class="btn">READ MORE</a>
+        </div>
+      </div>
+
+      <div class="about-content" style="flex-direction: row-reverse;">
+        <img src="https://www.shutterstock.com/image-photo/beautiful-young-woman-clean-fresh-600nw-2649116187.jpg" alt="About Image 2">
+        <div class="about-text">
+          <h2>You Can Buy Best Products From S.N.A</h2>
+          <p>Kami menyediakan berbagai produk kosmetik dengan kualitas terbaik untuk menemani setiap momen spesial Anda. Mulai dari lipstik, foundation, hingga skincare yang menutrisi kulit wajah Anda.</p>
+          <ul>
+            <li>Formulasi ringan dan tahan lama.</li>
+            <li>Warna modern dan cocok untuk semua jenis kulit.</li>
+            <li>Harga terjangkau dengan kualitas premium.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND SECTION -->
+     <!-- OUR PRODUCTS SECTION -->
+  <section id="products" style="background-color: #fff5f7; padding: 80px 60px; text-align: center;">
+    <h1 style="font-family: 'Playfair Display', serif; color: #a10032; font-size: 42px; margin-bottom: 50px;">
+      OUR PRODUCTS
+    </h1>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+
+      <!-- Product 1 -->
+      <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 260px; overflow: hidden; transition: 0.3s;">
+        <img src="https://d2jlkn4m127vak.cloudfront.net/medias/products/variant-1582871381.png" alt="Lipstick" style="width: 100%; height: 240px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="font-family: 'Playfair Display', serif; color: #a10032;">Wardah Matte Lipstick</h3>
+          <p style="font-size: 14px; color: #555;">Lipstik lembut dengan warna tahan lama untuk bibir memikat sepanjang hari.</p>
+          <p style="font-weight: bold; color: #a10032;">Rp47.000</p>
+          <a href="#" style="display:inline-block; background:#a10032; color:#fff; padding:8px 16px; border-radius:4px; text-decoration:none;">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 260px; overflow: hidden; transition: 0.3s;">
+        <img src="https://www.beautyhaul.com/assets/uploads/products/thumbs/800x800/Powerstay_Weightless_Liquid_Foundation_-_SALE-01_%282%291.jpg" alt="Foundation" style="width: 100%; height: 240px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="font-family: 'Playfair Display', serif; color: #a10032;">Powerstay Weightless Liquid Foundation 40 ml</h3>
+          <p style="font-size: 14px; color: #555;">Memberikan hasil akhir natural dan menutrisi kulit wajah.</p>
+          <p style="font-weight: bold; color: #a10032;">Rp191.000</p>
+          <a href="#" style="display:inline-block; background:#a10032; color:#fff; padding:8px 16px; border-radius:4px; text-decoration:none;">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 260px; overflow: hidden; transition: 0.3s;">
+        <img src="https://img.lazcdn.com/g/p/b70d85a12b32c240b2e333f42af50f68.png_720x720q80.png" alt="Eyeshadow" style="width: 104%; height: 240px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="font-family: 'Playfair Display', serif; color: #a10032;">Emina Pop Rouge Pressed EyeShadow</h3>
+          <p style="font-size: 14px; color: #555;">Hadirkan pesona mata memikat dengan sentuhan lembut dan warna elegan yang memancarkan keanggunan alami.</p>
+          <p style="font-weight: bold; color: #a10032;">Rp50.000</p>
+          <a href="#" style="display:inline-block; background:#a10032; color:#fff; padding:8px 16px; border-radius:4px; text-decoration:none;">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 260px; overflow: hidden; transition: 0.3s;">
+        <img src="https://images.somethinc.com/uploads/products/thumbs/800x800/Ceramic-Cover-NoFrame1.jpg" alt="Moisturizer" style="width: 100%; height: 240px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="font-family: 'Playfair Display', serif; color: #a10032;">CERAMIC SKIN Saviour Moisturizer Gel</h3>
+          <p style="font-size: 14px; color: #555;">Krim pelembap ringan untuk kulit sehat, lembap, dan bercahaya.</p>
+          <p style="font-weight: bold; color: #a10032;">Rp169.000</p>
+          <a href="#" style="display:inline-block; background:#a10032; color:#fff; padding:8px 16px; border-radius:4px; text-decoration:none;">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 260px; overflow: hidden; transition: 0.3s;">
+        <img src="https://medias.watsons.co.id/publishing/WTCID-40213-side-zoom.jpg?version=1728592935" alt="Mascara" style="width: 100%; height: 240px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="font-family: 'Playfair Display', serif; color: #a10032;">Implora Mascara Deep Black</h3>
+          <p style="font-size: 14px; color: #555;">Memberi efek bulu mata tebal dan lentik tanpa menggumpal.</p>
+          <p style="font-weight: bold; color: #a10032;">Rp24.700</p>
+          <a href="#" style="display:inline-block; background:#a10032; color:#fff; padding:8px 16px; border-radius:4px; text-decoration:none;">Add to Cart</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="brands">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaMfezYv404dXOmZuH-ajJOXhMPzk85rKj6A&s" alt="Wardah">
+    <img src="https://london.bridestory.com/images/c_fill,dpr_1.0,f_auto,fl_progressive,pg_1,q_80,w_680/v1/assets/logo-tiara-rJBWLfTcS/groovy-photography_cosmetic-make-over_3.jpg" alt="Make Over">
+    <img src="https://images.soco.id/c0f19510-8fad-4631-a35d-269dd750a8d6-.jpg" alt="Emina">
+    <img src="https://somethinc.com/assets/nct/logo-somethinc.png" alt="Somethinc">
+    <img src="https://img.lazcdn.com/g/p/7f9292482b8f30a97b62738c32945ce2.jpg_960x960q80.jpg_.webp" alt="Implora">
+  </section>
+<!-- CONTACT SECTION -->
+<section id="contact" style="background-color:#fdf7f1; padding:80px 90px;">
+  <h1 style="font-family:'Playfair Display',serif; color:#a10032; font-size:42px; text-align:center; margin-bottom:50px;">
+    CONTACT
+  </h1>
+
+  <div style="display:flex; flex-wrap:wrap; gap:60px; justify-content:space-between;">
+
+    <!-- CONTACT INFO -->
+    <div style="flex:1; min-width:300px;">
+      <h2 style="font-family:'Playfair Display',serif; color:#a10032; font-size:24px; margin-bottom:20px;">Contact Information</h2>
+      <p style="color:#555; margin-bottom:25px;">Hubungi kami untuk pertanyaan atau bantuan lebih lanjut.</p>
+
+      <h3 style="font-family:'Playfair Display',serif; color:#a10032;">Office</h3>
+      <p>Jl. Mawar Cantik No. 21, Jakarta, Indonesia</p>
+      <p>+62 812-3456-7890</p>
+      <p>+62 821-9876-4321</p>
+      <p>contact@sna-cosmetics.com</p>
+
+      <br>
+
+      <h3 style="font-family:'Playfair Display',serif; color:#a10032;">Management</h3>
+      <p>Jl. Melati Indah No. 11, Jakarta, Indonesia</p>
+      <p>+62 813-2222-8899</p>
+      <p>+62 821-9999-5555</p>
+      <p>management@sna-cosmetics.com</p>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div style="flex:1; min-width:300px;">
+      <h2 style="font-family:'Playfair Display',serif; color:#a10032; font-size:24px; margin-bottom:10px;">Get In Touch</h2>
+      <p style="color:#555; margin-bottom:25px;">Use the form below to get in touch with us.</p>
+
+      <form onsubmit="sendContact(event)" style="display:flex; flex-direction:column; gap:12px;">
+        <input type="text" id="name" placeholder="Your Name*" required style="padding:10px; border:1px solid #ccc; border-radius:4px;">
+        <input type="email" id="email" placeholder="Your Email*" required style="padding:10px; border:1px solid #ccc; border-radius:4px;">
+        <input type="text" id="phone" placeholder="Phone Number" style="padding:10px; border:1px solid #ccc; border-radius:4px;">
+        <input type="text" id="subject" placeholder="Subject" style="padding:10px; border:1px solid #ccc; border-radius:4px;">
+        <textarea id="message" rows="5" placeholder="Your Message*" required style="padding:10px; border:1px solid #ccc; border-radius:4px;"></textarea>
+
+        <button type="submit"
+          style="padding:12px; background:#a10032; color:white; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">
+          SUBMIT
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+function sendContact(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  const text = `Halo!%0ASaya ingin menghubungi S.N.A Cosmetics.%0A%0A*Nama:* ${name}%0A*Email:* ${email}%0A*Telp:* ${phone}%0A*Subjek:* ${subject}%0A*Pesan:* ${message}`;
+
+  window.open(`https://wa.me/6285775582082?text=${text}`);
+}
+</script>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 S.N.A Cosmetics. All rights reserved.</p>
+  </footer>
+
+<!-- === SCRIPT === -->
+<script>
+  // === NONAKTIFKAN LOGIN DAN PENCARIAN ===
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.login-icon, .search-icon').forEach(icon => {
+      icon.addEventListener('click', e => {
+        e.preventDefault(); // cegah pindah halaman
+        // Tambahkan efek kecil agar terasa responsif
+        icon.style.opacity = '0.6';
+        setTimeout(() => (icon.style.opacity = '1'), 150);
+      });
+    });
+  });
+
+  // === SIMPAN DATA KERANJANG DI LOCALSTORAGE ===
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // === UPDATE JUMLAH PRODUK DI ICON 🛒 ===
+  function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  const countEl = document.querySelector('.cart-count');
+
+  if (countEl) {
+    countEl.textContent = count.toString().padStart(2, '0');
+    countEl.style.display = count > 0 ? 'inline-block' : 'none';
+  }
+}
+
+  updateCartCount();
+
+  // === TAMBAH PRODUK KE KERANJANG ===
+  function addToCart(name, price) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+
+    // Notifikasi mini ✨
+    const note = document.createElement('div');
+    note.textContent = `${name} ditambahkan ke keranjang 🛍️`;
+    Object.assign(note.style, {
+      position: 'fixed',
+      bottom: '20px',
+      right: '20px',
+      background: '#a10032',
+      color: 'white',
+      padding: '12px 20px',
+      borderRadius: '6px',
+      fontSize: '14px',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+      zIndex: '9999',
+      opacity: '0',
+      transition: 'opacity 0.3s ease'
+    });
+    document.body.appendChild(note);
+    setTimeout(() => note.style.opacity = '1', 10);
+    setTimeout(() => {
+      note.style.opacity = '0';
+      setTimeout(() => note.remove(), 300);
+    }, 1500);
+  }
+
+  // === PASANG EVENT KE SETIAP TOMBOL ADD TO CART ===
+  document.querySelectorAll('#products a').forEach(button => {
+    if (button.textContent.includes('Add to Cart')) {
+      const card = button.closest('div');
+      const name = card.querySelector('h3').textContent;
+      const priceText = card.querySelector('p[style*="font-weight"]').textContent.replace(/[^\d]/g, '');
+      const price = parseInt(priceText);
+      button.addEventListener('click', e => {
+        e.preventDefault();
+        addToCart(name, price);
+      });
+    }
+  });
+</script>
+
+<script>
+const burger = document.querySelector(".hamburger-menu");
+const navMenu = document.querySelector(".nav-menu");
+
+burger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+</script>
+
+</body>
+</html>
